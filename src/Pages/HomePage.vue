@@ -1,7 +1,6 @@
 <template>
   <div class="bg-[#F9FAFB] text-gray-800 font-inter min-h-screen">
 
-    <!-- NAVBAR -->
     <nav class="w-full px-6 py-4 flex justify-between items-center border-b bg-white sticky top-0 z-50">
 
       <!-- LOGO -->
@@ -14,10 +13,17 @@
         <RouterLink to="/" class="hover:text-indigo-600">Dashboard</RouterLink>
         <RouterLink to="/journal" class="hover:text-indigo-600">Journal</RouterLink>
         <RouterLink to="/notes" class="hover:text-indigo-600">Catatan</RouterLink>
-        <RouterLink to="/market" class="hover:text-indigo-600">Market</RouterLink>
+        <a
+          href="https://coinmarketcap.com/id/"
+          target="_blank"
+          rel="noopener"
+          class="hover:text-indigo-600"
+        >
+          Market
+        </a>
       </div>
 
-      <!-- BURGER MOBILE -->
+      <!-- BURGER -->
       <button
         class="md:hidden flex flex-col gap-1.5"
         @click="mobileOpen = !mobileOpen"
@@ -28,18 +34,23 @@
       </button>
     </nav>
 
-    <!-- MOBILE MENU DROPDOWN -->
+    <!-- MOBILE MENU (OVERLAY) -->
     <div
       v-if="mobileOpen"
-      class="md:hidden bg-white border-b px-6 py-4 flex flex-col gap-4 animate-fade"
+      class="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg px-6 py-5 flex flex-col gap-4 z-40 animate-fade"
     >
-      <RouterLink to="/" class="hover:text-indigo-600" @click="mobileOpen = false">Dashboard</RouterLink>
-      <RouterLink to="/journal" class="hover:text-indigo-600" @click="mobileOpen = false">Journal</RouterLink>
-      <RouterLink to="/notes" class="hover:text-indigo-600" @click="mobileOpen = false">Catatan</RouterLink>
-      <RouterLink to="/market" class="hover:text-indigo-600" @click="mobileOpen = false">Market</RouterLink>
+      <RouterLink to="/" @click="closeMenu" class="hover:text-indigo-600">Dashboard</RouterLink>
+      <RouterLink to="/journal" @click="closeMenu" class="hover:text-indigo-600">Journal</RouterLink>
+      <RouterLink to="/notes" @click="closeMenu" class="hover:text-indigo-600">Catatan</RouterLink>
+      <a
+        href="https://coinmarketcap.com/id/"
+        target="_blank"
+        rel="noopener"
+        class="hover:text-indigo-600"
+      >
+        Market
+      </a>
     </div>
-
-
 
     <!-- HERO -->
     <section class="px-6 py-20 max-w-5xl mx-auto text-center">
@@ -64,21 +75,19 @@
     </section>
 
 
-
     <!-- QUICK ACCESS -->
     <section class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
 
       <div
         class="p-6 bg-white border rounded-2xl shadow-sm hover:shadow-md transition"
-        @click="$router.push('/market')"
       >
         <h3 class="text-xl font-semibold mb-3">Crypto Market</h3>
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
           Pantau pergerakan harga terbaru dari berbagai koin.
         </p>
-        <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-xl hover:bg-indigo-700">
+        <a href="https://coinmarketcap.com/id/" class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-xl">
           Buka Market
-        </button>
+        </a>
       </div>
 
       <div
@@ -89,7 +98,7 @@
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
           Catat setiap entry, exit, strategi, dan emosi saat trading.
         </p>
-        <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-xl hover:bg-indigo-700">
+        <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-xl">
           Mulai Menulis
         </button>
       </div>
@@ -102,13 +111,12 @@
         <p class="text-gray-600 text-sm leading-relaxed mb-4">
           Simpan insight penting dan ide trading dengan mudah.
         </p>
-        <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-xl hover:bg-indigo-700">
+        <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-xl">
           Tulis Catatan
         </button>
       </div>
 
     </section>
-
 
 
     <!-- MARKET -->
@@ -146,7 +154,6 @@
     </section>
 
 
-
     <!-- FOOTER -->
     <footer class="text-center text-sm text-gray-500 py-10">
       © 2025 CryptoJournal — Workspace modern untuk trader Indonesia.
@@ -155,36 +162,35 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      coins: [],
-      mobileOpen: false, // ✔ burger menu toggle
-    };
-  },
+<script setup>
+import { ref, onMounted } from "vue";
 
-  mounted() {
-    this.getMarketData();
-  },
+const coins = ref([]);
+const mobileOpen = ref(false);
 
-  methods: {
-    async getMarketData() {
-      try {
-        const res = await fetch(
-          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=idr&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-        );
-        this.coins = await res.json();
-      } catch (err) {
-        console.error("Gagal memuat data market:", err);
-      }
-    },
-
-    formatNumber(num) {
-      return num.toLocaleString("id-ID");
-    },
-  },
+// Fungsi tutup menu mobile
+const closeMenu = () => {
+  mobileOpen.value = false;
 };
+
+// Ambil data market
+const getMarketData = async () => {
+  try {
+    const res = await fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=idr&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+    );
+    coins.value = await res.json();
+  } catch (err) {
+    console.error("Gagal memuat data:", err);
+  }
+};
+
+onMounted(() => {
+  getMarketData();
+});
+
+// Format rupiah
+const formatNumber = (num) => num.toLocaleString("id-ID");
 </script>
 
 <style>
