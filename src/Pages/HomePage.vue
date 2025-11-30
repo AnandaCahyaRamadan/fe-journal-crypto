@@ -2,71 +2,7 @@
   <div class="bg-[#F9FAFB] text-gray-800 font-inter min-h-screen">
 
     <!-- NAVBAR -->
-    <nav
-      class="w-full px-6 py-4 flex justify-between items-center border-b bg-white sticky top-0 z-50 transition-all duration-300"
-    >
-      <h1 class="text-xl font-semibold tracking-tight flex items-center gap-2">
-        <img src="logo.png" alt="" style="width: 200px;">
-      </h1>
-
-      <div class="hidden md:flex items-center gap-6 text-sm">
-        <RouterLink to="/" class="nav-link flex items-center gap-1">
-          <!-- Home Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M3 12l9-9 9 9"></path>
-            <path d="M9 21V9h6v12"></path>
-          </svg>
-          Dashboard
-        </RouterLink>
-
-        <RouterLink to="/journal" class="nav-link flex items-center gap-1">
-          <!-- Journal Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H18"></path>
-            <path d="M18 2H6.5A2.5 2.5 0 0 0 4 4.5v15"></path>
-            <path d="M8 7h8M8 11h8M8 15h5"></path>
-          </svg>
-          Journal
-        </RouterLink>
-
-        <RouterLink to="/notes" class="nav-link flex items-center gap-1">
-          <!-- Notes Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M4 20h16"></path>
-            <path d="M4 4h16v13H4z"></path>
-            <path d="M8 8h8M8 12h5"></path>
-          </svg>
-          Catatan
-        </RouterLink>
-
-        <a href="https://coinmarketcap.com/id/" target="_blank" rel="noopener"
-          class="nav-link flex items-center gap-1">
-          <!-- Market Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M3 3v18h18"></path>
-            <path d="M7 14l3-3 3 2 4-5"></path>
-          </svg>
-          Market
-        </a>
-      </div>
-
-      <div>
-        <a href="" class="btn btn-primary hidden md:block">Login</a>
-      </div>
-
-      <button
-        class="md:hidden flex flex-col gap-1.5 active:scale-90 transition"
-        @click="mobileOpen = !mobileOpen"
-      >
-        <span class="w-6 h-0.5 bg-gray-800"></span>
-        <span class="w-6 h-0.5 bg-gray-800"></span>
-        <span class="w-6 h-0.5 bg-gray-800"></span>
-      </button>
-    </nav>
+    <NavbarComponent />
 
     <div
       v-if="mobileOpen"
@@ -339,9 +275,7 @@
 import { ref, onMounted, nextTick } from "vue";
 
 const coins = ref([]);
-const mobileOpen = ref(false);
-
-const closeMenu = () => (mobileOpen.value = false);
+import NavbarComponent from "@/components/NavbarComponent.vue";
 
 // GET MARKET DATA
 const getMarketData = async () => {

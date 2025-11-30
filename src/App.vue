@@ -1,15 +1,9 @@
 <template>
-  <div id="app">
-    <CryptoList />
-  </div>
+  <router-view />
 </template>
 
 <script>
-import CryptoList from "./Pages/HomePage.vue";
-
 export default {
-  components: {
-    CryptoList,
-  },
+  name: "App",
 };
 </script>
