@@ -46,7 +46,7 @@
       </a>
     </div>
     <div>
-    <a href="" class="btn btn-primary hidden md:block flex items-center gap-2">
+    <a href="/login" class="btn btn-secondary hidden md:block flex items-center gap-2">
         <i class="fa-solid fa-right-to-bracket"></i>
         Login
     </a>
@@ -72,7 +72,7 @@
       <a href="https://coinmarketcap.com/id/" @click="closeMenu" class="nav-link">
         Market
       </a>
-      <a href="" class="btn btn-primary bg-indigo-600 text-center"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+      <a href="/login" class="btn btn-secondary bg-indigo-600 text-center"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
     </div>
   </nav>
 </template>

@@ -46,7 +46,7 @@
 
         <RouterLink
           to="/journal"
-          class="btn-primary block w-fit mx-auto px-6 py-3 rounded-xl text-white font-semibold text-sm bg-black hover:bg-gray-800 transition"
+          class="btn-secondary block w-fit mx-auto px-6 py-3 rounded-xl text-white font-semibold text-sm bg-black hover:bg-gray-800 transition"
         >
           Mulai Mencatat
         </RouterLink>
@@ -93,7 +93,7 @@
 
       <a
         href="https://coinmarketcap.com/id/"
-        class="w-full block text-center btn-primary text-white py-2.5 rounded-xl 
+        class="w-full block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl 
               font-medium transition"
       >
         Buka Market
@@ -121,7 +121,7 @@
         </p>
 
         <button
-          class="w-full btn-primary text-white py-2.5 rounded-xl font-medium 
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl font-medium 
                  transition">
           Mulai Menulis
         </button>
@@ -148,7 +148,7 @@
         </p>
 
         <button
-          class="w-full btn-primary text-white py-2.5 rounded-xl font-medium transition">
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl font-medium transition">
           Tulis Catatan
         </button>
       </div>
