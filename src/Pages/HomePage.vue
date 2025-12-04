@@ -94,7 +94,7 @@
       <a
         href="https://www.coingecko.com/id"
         class="w-full block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl 
-              font-medium transition"
+             text-sm transition font-semibold"
       >
         Buka Market
       </a>
@@ -121,7 +121,7 @@
         </p>
 
         <button
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl font-medium 
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl text-sm font-semibold
                  transition">
           Mulai Menulis
         </button>
@@ -148,7 +148,7 @@
         </p>
 
         <button
-          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl font-medium transition">
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl text-sm font-semibold transition">
           Tulis Catatan
         </button>
       </div>
