@@ -40,13 +40,12 @@
         dan menyimpan insight pengalaman supaya progres trading makin konsisten.
       </p>
 
-      <!-- GLASS CARD -->
-      <div class="mx-auto mt-10 max-w-md backdrop-blur bg-white/30 border border-white/20 shadow-xl p-6 rounded-2xl animate-fade-up"
+      <div class="mx-auto mt-5 max-w-md backdrop-blur bg-white/30 p-6 rounded-2xl animate-fade-up"
           style="animation-delay: .2s">
 
         <RouterLink
           to="/journal"
-          class="btn-secondary block w-fit mx-auto px-6 py-3 rounded-xl text-white font-semibold text-sm bg-black hover:bg-gray-800 transition"
+          class="btn-primary block w-fit mx-auto px-6 py-3 rounded-xl text-white font-semibold text-sm bg-black hover:bg-gray-800 transition shadow-xl"
         >
           Mulai Mencatat
         </RouterLink>
