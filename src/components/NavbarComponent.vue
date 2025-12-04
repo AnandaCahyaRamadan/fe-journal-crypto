@@ -3,7 +3,7 @@
     class="w-full px-6 py-4 flex justify-between items-center border-b bg-white sticky top-0 z-50 transition-all duration-300"
   >
     <h1 class="text-xl font-semibold tracking-tight flex items-center gap-2">
-      <img src="logo.png" alt="" style="width: 200px;">
+      <img src="logo.png" alt="" style="width: 100px;">
     </h1>
 
     <div class="hidden md:flex items-center gap-6 text-sm">
@@ -72,7 +72,7 @@
       <a href="https://coinmarketcap.com/id/" @click="closeMenu" class="nav-link">
         Market
       </a>
-      <a href="" class="btn btn-primary text-center"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+      <a href="" class="btn btn-primary bg-indigo-600 text-center"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
     </div>
   </nav>
 </template>

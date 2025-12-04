@@ -43,9 +43,6 @@
       <!-- GLASS CARD -->
       <div class="mx-auto mt-10 max-w-md backdrop-blur bg-white/30 border border-white/20 shadow-xl p-6 rounded-2xl animate-fade-up"
           style="animation-delay: .2s">
-        <p class="text-gray-700 text-sm mb-4">
-          🌱 “Jurnal trading meningkatkan akurasi keputusan hingga 40%.”
-        </p>
 
         <RouterLink
           to="/journal"
@@ -57,64 +54,105 @@
 
     </section>
 
-    <!-- 3 FEATURE CARDS -->
-    <section class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+    <!-- FEATURE SECTION -->
+    <section class="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
 
-      <!-- CARD 1 -->
-      <div class="feature-card animate-fade-up" style="animation-delay:.1s">
-        <!-- Crypto icon -->
-        <div class="flex items-center justify-center mb-4">
-          <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path d="M12 2l4 4-4 4-4-4zM6 14l4 4-4 4-4-4zM18 14l4 4-4 4-4-4z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold mb-3">Crypto Market</h3>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-          Pantau pergerakan harga terbaru dari berbagai koin.
-        </p>
-        <a href="https://coinmarketcap.com/id/" class="btn btn-primary">Buka Market</a>
+      <!-- CARD -->
+    <div
+      class="group feature-card bg-white/70 backdrop-blur-lg rounded-2xl p-7 shadow-lg border border-white/40 
+            hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-up"
+      style="animation-delay:.1s"
+    >
+      <div class="flex items-center justify-center mb-5">
+        <!-- ICON CANDLESTICK -->
+        <svg 
+          class="w-12 h-12 text-indigo-600 group-hover:text-indigo-700 transition"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <!-- Left candle -->
+          <path d="M6 3v4M6 13v8" />
+          <rect x="4" y="7" width="4" height="6" rx="1" />
+
+          <!-- Middle candle -->
+          <path d="M12 2v5M12 14v8" />
+          <rect x="10" y="7" width="4" height="7" rx="1" />
+
+          <!-- Right candle -->
+          <path d="M18 5v4M18 14v7" />
+          <rect x="16" y="9" width="4" height="5" rx="1" />
+        </svg>
       </div>
 
-      <!-- CARD 2 -->
-      <div class="feature-card animate-fade-up cursor-pointer" style="animation-delay:.2s"
-        @click="$router.push('/journal')">
+      <h3 class="text-2xl font-semibold mb-3 text-gray-800">Crypto Market</h3>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Pantau pergerakan harga terbaru dari berbagai koin.
+      </p>
 
-        <div class="flex items-center justify-center mb-4">
-          <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
+      <a
+        href="https://coinmarketcap.com/id/"
+        class="w-full block text-center btn-primary text-white py-2.5 rounded-xl 
+              font-medium transition"
+      >
+        Buka Market
+      </a>
+    </div>
+
+      <!-- CARD -->
+      <div
+        class="group feature-card bg-white/70 backdrop-blur-lg rounded-2xl p-7 shadow-lg border border-white/40 
+              hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-up cursor-pointer"
+        @click="$router.push('/journal')"
+        style="animation-delay:.2s"
+      >
+        <div class="flex items-center justify-center mb-5">
+          <svg class="w-12 h-12 text-indigo-600 group-hover:text-indigo-700 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H18"></path>
             <path d="M18 2H6.5A2.5 2.5 0 0 0 4 4.5v15"></path>
             <path d="M8 7h8M8 11h8M8 15h5"></path>
           </svg>
         </div>
 
-        <h3 class="text-xl font-semibold mb-3">Trading Journal</h3>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+        <h3 class="text-2xl font-semibold mb-3 text-gray-800">Trading Journal</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">
           Catat setiap entry, exit, strategi, dan emosi saat trading.
         </p>
-        <button class="btn btn-primary">Mulai Menulis</button>
+
+        <button
+          class="w-full btn-primary text-white py-2.5 rounded-xl font-medium 
+                 transition">
+          Mulai Menulis
+        </button>
       </div>
 
-      <!-- CARD 3 -->
-      <div class="feature-card animate-fade-up cursor-pointer" style="animation-delay:.3s"
-        @click="$router.push('/notes')">
-
-        <div class="flex items-center justify-center mb-4">
-          <svg class="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
+      <!-- CARD -->
+      <div
+        class="group feature-card bg-white/70 backdrop-blur-lg rounded-2xl p-7 shadow-lg border border-white/40 
+              hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-up cursor-pointer"
+        @click="$router.push('/notes')"
+        style="animation-delay:.3s"
+      >
+        <div class="flex items-center justify-center mb-5">
+          <svg class="w-12 h-12 text-indigo-600 group-hover:text-indigo-700 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M4 20h16"></path>
             <path d="M4 4h16v13H4z"></path>
             <path d="M8 8h8M8 12h5"></path>
           </svg>
         </div>
 
-        <h3 class="text-xl font-semibold mb-3">Catatan Harian</h3>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+        <h3 class="text-2xl font-semibold mb-3 text-gray-800">Catatan Harian</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">
           Simpan insight penting dan ide trading dengan mudah.
         </p>
-        <button class="btn btn-primary">Tulis Catatan</button>
+
+        <button
+          class="w-full btn-primary text-white py-2.5 rounded-xl font-medium transition">
+          Tulis Catatan
+        </button>
       </div>
+
     </section>
 
     <!-- MARKET MOVERS -->
