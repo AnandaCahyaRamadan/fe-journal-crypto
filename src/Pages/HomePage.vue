@@ -11,7 +11,7 @@
       <RouterLink to="/" @click="closeMenu" class="nav-link">Dashboard</RouterLink>
       <RouterLink to="/journal" @click="closeMenu" class="nav-link">Journal</RouterLink>
       <RouterLink to="/notes" @click="closeMenu" class="nav-link">Catatan</RouterLink>
-      <a href="https://coinmarketcap.com/id/" target="_blank" rel="noopener" class="nav-link">
+      <a href="https://www.coingecko.com/id" target="_blank" rel="noopener" class="nav-link">
         Market
       </a>
       <a href="" class="btn btn-primary text-center">Login</a>
@@ -92,7 +92,7 @@
       </p>
 
       <a
-        href="https://coinmarketcap.com/id/"
+        href="https://www.coingecko.com/id"
         class="w-full block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-xl 
               font-medium transition"
       >
@@ -153,6 +153,55 @@
         </button>
       </div>
 
+    </section>
+
+    <!-- LIST COIN -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold mb-6 tracking-tight">📌 Daftar Coin Populer</h2>
+
+      <div class="overflow-x-auto rounded-2xl shadow-sm border bg-white">
+        <table class="w-full text-left table-auto min-w-[700px]">
+          <thead>
+            <tr class="bg-gray-100 text-gray-700 text-sm">
+              <th class="py-3 px-4">Coin</th>
+              <th class="py-3 px-4">Harga</th>
+              <th class="py-3 px-4">24h</th>
+              <th class="py-3 px-4">Market Cap</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr
+              v-for="coin in coins.slice(0, 20)"
+              :key="coin.id"
+              class="border-b hover:bg-gray-50 transition"
+            >
+              <td class="py-3 px-4 flex items-center gap-3">
+                <img :src="coin.image" class="w-7 h-7 rounded-full" />
+                <div>
+                  <div class="font-semibold">{{ coin.name }}</div>
+                  <div class="text-xs text-gray-500 uppercase">{{ coin.symbol }}</div>
+                </div>
+              </td>
+
+              <td class="py-3 px-4 font-semibold">
+                Rp {{ formatNumber(coin.current_price) }}
+              </td>
+
+              <td
+                class="py-3 px-4 font-semibold"
+                :class="coin.price_change_percentage_24h >= 0 ? 'text-green-600' : 'text-red-600'"
+              >
+                {{ coin.price_change_percentage_24h.toFixed(2) }}%
+              </td>
+
+              <td class="py-3 px-4 text-gray-700">
+                Rp {{ formatNumber(coin.market_cap) }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- MARKET MOVERS -->
@@ -264,7 +313,7 @@
             <li><RouterLink to="/" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Dashboard</RouterLink></li>
             <li><RouterLink to="/journal" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Journal</RouterLink></li>
             <li><RouterLink to="/notes" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Catatan</RouterLink></li>
-            <li><a href="https://coinmarketcap.com/id/" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Market</a></li>
+            <li><a href="https://www.coingecko.com/id" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Market</a></li>
           </ul>
         </div>
 
