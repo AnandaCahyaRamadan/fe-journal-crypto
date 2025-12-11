@@ -45,7 +45,7 @@
 
         <RouterLink
           to="/journal"
-          class="btn-primary block w-fit mx-auto px-6 py-3 rounded-xl text-white font-semibold text-sm bg-black hover:bg-gray-800 transition shadow-xl"
+          class="btn-secondary block w-fit mx-auto px-6 py-3 rounded-xl text-white font-semibold text-sm bg-primary transition shadow-xl"
         >
           Mulai Mencatat
         </RouterLink>
@@ -428,36 +428,6 @@ const formatNumber = (num) => num.toLocaleString("id-ID");
 }
 .nav-link:hover {
   color: #4f46e5;
-  transform: translateY(-2px);
-}
-
-/* BUTTONS */
-.btn-primary {
-  padding: 12px 24px;
-  background: black;
-  color: white;
-  border-radius: 12px;
-  font-size: 14px;
-  transition: 0.25s;
-}
-.btn-primary:hover {
-  background: #222;
-  transform: translateY(-2px);
-}
-.btn-primary:active {
-  transform: scale(0.95);
-}
-
-.btn-secondary {
-  padding: 10px 18px;
-  background: #4f46e5;
-  color: white;
-  border-radius: 12px;
-  font-size: 13px;
-  transition: 0.25s;
-}
-.btn-secondary:hover {
-  background: #4338ca;
   transform: translateY(-2px);
 }
 
