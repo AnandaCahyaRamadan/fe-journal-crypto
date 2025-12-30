@@ -3,7 +3,7 @@
     class="w-full px-6 py-4 flex justify-between items-center border-b bg-white sticky top-0 z-50 transition-all duration-300"
   >
     <h1 class="text-xl font-semibold tracking-tight flex items-center gap-2">
-      <img src="logo.png" alt="" style="width: 100px;">
+      <img src="logo.png" alt="" style="width: 50px;">
     </h1>
 
     <div class="hidden md:flex items-center gap-6 text-sm">
