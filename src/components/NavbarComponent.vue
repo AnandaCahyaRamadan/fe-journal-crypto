@@ -1,17 +1,21 @@
 <template>
   <nav
-    class="w-full px-6 py-4 flex justify-between items-center border-b bg-white sticky top-0 z-50 transition-all duration-300"
+    class="w-full px-6 py-2 flex justify-between items-center border-b bg-white sticky top-0 z-50 transition-all duration-300"
   >
     <h1 class="text-xl font-semibold tracking-tight flex items-center gap-2">
-      <img src="logo.png" alt="" style="width: 50px;">
+      <img src="logo.png" alt="" style="width: 40px;"> <span>Jurnal Trading</span>
     </h1>
 
     <div class="hidden md:flex items-center gap-6 text-sm">
       <RouterLink to="/" class="nav-link flex items-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
-          stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M3 12l9-9 9 9"></path>
-          <path d="M9 21V9h6v12"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            class="w-5 h-5" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 9.75L12 3l9 6.75V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.75z" />
         </svg>
         Dashboard
       </RouterLink>
