@@ -1,6 +1,6 @@
 <template>
     <footer class="relative mt-20 bg-gradient-to-br from-white to-gray-50 dark:from-[#0f0f0f] dark:to-[#1a1a1a] border-t">
-      <div class="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-12 animate-fade-up">
+      <div class="max-w-6xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-12 animate-fade-up">
 
         <!-- BRAND -->
         <div>
